@@ -3,11 +3,11 @@ import Link from "next/link";
 /** Compact chrome for member/scan flows — not a sales header. */
 export function SiteHeader({ compact = false }: { compact?: boolean }) {
   return (
-    <header className="no-print border-b border-border/80 backdrop-blur sticky top-0 z-40 bg-black/80">
+    <header className="no-print border-b border-border sticky top-0 z-40 bg-white">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
           <span
-            className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold border"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold border"
             style={{
               backgroundColor: "#2E7D3226",
               color: "#2E7D32",
@@ -16,15 +16,15 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
           >
             PG
           </span>
-          <span className="text-slate-200">Pro Gym</span>
+          <span className="text-navy">Pro Gym</span>
         </Link>
         {!compact && (
-          <nav className="flex items-center gap-3 text-sm text-slate-400">
-            <Link href="/" className="hover:opacity-80" style={{ color: undefined }}>
+          <nav className="flex items-center gap-3 text-sm text-muted">
+            <Link href="/" className="hover:text-[var(--accent)]" style={{ color: undefined }}>
               Home
             </Link>
             <Link href="/scan">Scan</Link>
-            <Link href="/admin/login" className="text-xs text-slate-500 hover:text-slate-300">
+            <Link href="/admin/login" className="text-xs text-muted hover:text-body">
               Staff
             </Link>
           </nav>
